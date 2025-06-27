@@ -98,23 +98,74 @@ namespace PROGPOE
 
             if (SelectedQuestion == 0)
             {
-                LabelA.Text = Question1[0];
-                LabelB.Text = Question1[1];
-                LabelC.Text = Question1[2];
-                LabelD.Text = Question1[3];
+                LabelA.Text = $"A: {Question1[0]}";
+                LabelB.Text = $"B: {Question1[1]}";
+                LabelC.Text = $"C: {Question1[2]}";
+                LabelD.Text = $"D: {Question1[3]}";
             }
             if (SelectedQuestion == 1)
             {
-                LabelA.Text = Question2[0];
-                LabelB.Text = Question2[1];
-                LabelC.Text = Question2[2];
-                LabelD.Text = Question2[3];
+                LabelA.Text = $"A: {Question2[0]}";
+                LabelB.Text = $"B: {Question2[1]}";
+                LabelC.Text = $"C: {Question2[2]}";
+                LabelD.Text = $"D: {Question2[3]}";
             }
             if (SelectedQuestion == 2)
             {
-                LabelA.Text = Question3[0];
-                LabelB.Text = Question3[1];
+                LabelA.Text = $"A: {Question3[0]}";
+                LabelB.Text = $"B: {Question3[1]}";
+                LabelC.Text = $"C: {Question3[2]}";
+                LabelD.Text = $"D: {Question3[3]}";
             }
+            if (SelectedQuestion == 3)
+            {
+                LabelA.Text = $"A: {Question1[0]}";
+                LabelB.Text = $"B: {Question1[1]}";
+                LabelC.Text = $"C: {Question1[2]}";
+                LabelD.Text = $"D: {Question1[3]}";
+            }
+            if (SelectedQuestion == 4)
+            {
+                LabelA.Text = $"A: {Question2[0]}";
+                LabelB.Text = $"B: {Question2[1]}";
+                LabelC.Text = $"C: {Question2[2]}";
+                LabelD.Text = $"D: {Question2[3]}";
+            }
+            if (SelectedQuestion == 5)
+            {
+                LabelA.Text = $"A: {Question3[0]}";
+                LabelB.Text = $"B: {Question3[1]}";
+                LabelC.Text = $"C: {Question3[2]}";
+                LabelD.Text = $"D: {Question3[3]}";
+            }
+            if (SelectedQuestion == 6)
+            {
+                LabelA.Text = $"A: {Question1[0]}";
+                LabelB.Text = $"B: {Question1[1]}";
+                LabelC.Text = $"C: {Question1[2]}";
+                LabelD.Text = $"D: {Question1[3]}";
+            }
+            if (SelectedQuestion == 7) {
+                LabelA.Text = $"A: {Question2[0]}";
+                LabelB.Text = $"B: {Question2[1]}";
+                LabelC.Text = $"C: {Question2[2]}";
+                LabelD.Text = $"D: {Question2[3]}";
+            }
+            if (SelectedQuestion == 8)
+            {
+                LabelA.Text = $"A: {Question3[0]}";
+                LabelB.Text = $"B: {Question3[1]}";
+                LabelC.Text = $"C: {Question3[2]}";
+                LabelD.Text = $"D: {Question3[3]}";
+            }
+            if (SelectedQuestion == 9)
+            {
+                LabelA.Text = $"A: {Question1[0]}";
+                LabelB.Text = $"B: {Question1[1]}";
+                LabelC.Text = $"C: {Question1[2]}";
+                LabelD.Text = $"D: {Question1[3]}";
+            }
+
             WaitingForAnswer = true;
         }
 

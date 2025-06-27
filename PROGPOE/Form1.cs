@@ -15,8 +15,6 @@ namespace PROGPOE
         string AddTaskComand = "Add task -";
         string pattern = @"Add task -\s*(\w+)";
         string addedTask = null;
-        bool WaitingForDescription = false;
-        bool WaitingForDate = false;
 
         public Form1()
         {
@@ -40,6 +38,7 @@ namespace PROGPOE
             // function that checks if the add command is present and performs the function  
             if (UserInput.Text.Contains(AddTaskComand))
             {
+                string[] parts = UserInput.Text.Split("^ ");
                 // Check if the input matches the pattern for adding a task  
                 Match match = Regex.Match(UserInput.Text, pattern);
                 if (match.Success)
@@ -47,27 +46,30 @@ namespace PROGPOE
                     string word = "";
                     word = match.Groups[1].Value;
                     TaskNames.Add(word); // Use the instance of TaskManagement  
-                    WaitingForDescription = true;
+                    Descriptions.Add(parts[1]);
+                    Dates.Add(ConvertToDate(parts[2]));
                     //TaskNames.Add(UserInput.Text);
                     ChatBox.Items.Add($"{Bot}Task added " + word);
                 }
-                // function to append task description  
-
-                // function to append task date  
-                /*
-                if (WaitingForDate == true && WaitingForDescription == false)
-                {
-                    ChatBox.Items.Add("Chatbot: Add date. (e.g., 2025-06-06): ");
-                    if (DateTime.TryParseExact(UserInput.Text, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate))
-                    {
-                        Dates.Add(parsedDate); // Use the instance of TaskManagement  
-                    }
-                    ChatBox.Items.Add($"User:{UserInput}");
-                }
-                */
+                UserInput.Clear();
             }
 
 
+        }
+        // function that checks if the input is a date and converts it to a DateTime object
+        static DateTime ConvertToDate(string dateString)
+        {
+            // Specify the expected format
+            string format = "yyyy-MM-dd";
+
+            if (DateTime.TryParseExact(dateString, format, CultureInfo.InvariantCulture, DateTimeStyles.None, out DateTime parsedDate))
+            {
+                return parsedDate;
+            }
+            else
+            {
+                throw new FormatException("Invalid date format. Expected format: yyyy-MM-dd");
+            }
         }
 
         private void BackBTN_Click(object sender, EventArgs e)
@@ -78,6 +80,11 @@ namespace PROGPOE
         }
 
         private void ChatBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

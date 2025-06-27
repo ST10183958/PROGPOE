@@ -15,7 +15,7 @@ namespace PROGPOE
         List<string> nameDisplay = new List<string>();
         List<string> Descriptions = new List<string>();
         List<DateTime> Dates = new List<DateTime>();
-        public DisplayTasks(List<string>name, List<string> description, List<DateTime> date)
+        public DisplayTasks(List<string> name, List<string> description, List<DateTime> date)
         {
             InitializeComponent();
             nameDisplay = name;
@@ -24,9 +24,9 @@ namespace PROGPOE
             //function that counts the number of items in name list
             int count = nameDisplay.Count;
             //loop through the list and add each item to the DisplayBox
-            for(int i = 0; i < count; i++)
+            for (int i = 0; i < count; i++)
             {
-                DisplayBox.Items.Add($"{nameDisplay[i]} {Descriptions[i]}");
+                DisplayBox.Items.Add($"Task name:{nameDisplay[i]} - Description:{Descriptions[i]} - {Dates[i]}");
             }
 
         }
@@ -46,6 +46,11 @@ namespace PROGPOE
             NavigationMenu navigationMenuForm = new NavigationMenu(nameDisplay, Descriptions, Dates);
             navigationMenuForm.Show();
             this.Hide();
+        }
+
+        private void DisplayTasks_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

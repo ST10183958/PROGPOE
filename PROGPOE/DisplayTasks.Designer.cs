@@ -61,6 +61,7 @@
             Controls.Add(DisplayBox);
             Name = "DisplayTasks";
             Text = "DisplayTasks";
+            Load += DisplayTasks_Load;
             ResumeLayout(false);
         }
 
